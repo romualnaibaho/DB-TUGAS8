@@ -1,0 +1,55 @@
+---
+Silahkan teman-teman buat table tugas_populasi di dalam database belajar. Struktur serta isi data tabel disamakan dengan gambar diatas. Jika sudah, silahkan kerjakan tugas berikut:
+
+Jawab:
+create table tugas_populasi(
+	kota varchar(50),
+	kec tinyint(3) unsigned,
+	kel smallint(5) unsigned,
+	luas decimal(6,2),
+	penduduk int(10) unsigned
+);
+
+INSERT INTO kota VALUES
+	('Jakarta', 44, 267, 664.01, 9988495),
+   	('Surabaya', 31, 154, 350.54, 2805906),
+   	('Medan', 21, 151, 265.00, 2465469),
+   	('Bekasi', 12, 151, 206.61, 2381053),
+   	('Bandung', 30, 151, 167.67, 2339463),
+   	('Makassa', 14, 143, 199.26, 1651146),
+   	('Depok', 11, 63, 200.29, 1631951),
+   	('Semarang', 16, 177, 373.93, 1621384),
+	('Tangerang', 13, 104, 153.93, 1566190),
+	('Palembang', 14, 107, 369.22, 1548064);
+
+
+---
+1. Tampilkan kolom kota, kec, luas dan penduduk!
+
+   Jawab:
+   SELECT kota, kec, luas FROM tugas_populasi;
+
+---
+2. Tampilkan kolom kota kemudian ubah namanya menjadi Nama Kota, kolom kec menjadi Jumlah Kecamatan dan kolom kel menjadi Jumlah Kelurahan!
+
+   Jawab:
+   SELECT kota as 'Nama Kota', kec as 'Jumlah Kecamatan', kel as 'Jumlah Kelurahan' FROM tugas_populasi;
+
+---
+3. Tampilkan data dari table tugas_populasi berdasarkan Kecamatan dari jumlah terbesar!
+   
+   Jawab:
+   SELECT * FROM tugas_populasi ORDER BY kec DESC;
+
+---
+4. Urutkan berdasarkan kolom kel lalu diambil 5 data setelah baris ke-2!
+
+   Jawab:
+   SELECT * FROM tugas_populasi ORDER BY kel DESC LIMIT 2, 5;
+
+---
+5. Tampilkan data dimana kolom kota berisi string Depok!
+
+   Jawab:
+   SELECT * FROM tugas_populasi WHERE kota = 'Depok';
+   
